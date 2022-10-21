@@ -1,1 +1,36 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Long To Beat Overlay</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #00FF00;
+    }
+    img {
+      width: 50%;
+      max-width: 480px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="absolute flex flex-row w-full h-full justify-center">
+    <div id="game" class="flex flex-col justify-center">
+      <div id="cover" class="flex flex-row justify-center basis-1/2 bg-no-repeat bg-contain bg-center"></div>
+      <div id="info" class="flex flex-row w-full justify-center">
+        <div id="info" class="flex flex-col mt-8 w-full justify-center">
+            <div id="name" class="flex flex-row mt-4 w-full justify-center text-4xl text-white [text-shadow:_0_0_3px_rgb(0_0_0_/_100%)]"></div>
+            <div class="flex flex-row w-full justify-center text-2xl text-white [text-shadow:_0_0_3px_rgb(0_0_0_/_100%)]">
+              <div id="platforms" class="flex flex-col w-full text-wrap justify-center"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="public/index.js"></script>
+</body>
+</html>

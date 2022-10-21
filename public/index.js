@@ -1,15 +1,21 @@
 const updateGame = ({ name, imageUrl, platforms }) => {
-  document.querySelector('#cover').setAttribute('style', `background-image: url("${imageUrl}")`);
-  document.querySelector('#name').textContent = name;
-  
-  platforms = platforms.map((platform) => platform.replace(/^Nintendo/, ''));
-  
-  document.querySelector('#platforms').textContent = platforms.join(' / ');
+  const cover = document.querySelector('#cover');
+  const gameName = document.querySelector('#name')
+  const platformsList = document.querySelector('#platforms');
+
+  if (cover && gameName && platformsList) {
+    cover.setAttribute('style', `background-image: url("${imageUrl}")`);
+    gameName.textContent = name;
+    
+    platforms = platforms.map((platform) => platform.replace(/^Nintendo/, ''));
+    
+    platformsList.textContent = platforms.join(' / ');
+  }
 };
 
 const run = async () => {
   const { pathname } = window.location;
-  const gameName = decoceURI(pathname.slice(1));
+  const gameName = decodeURI(pathname.slice(1));
   const response = await fetch(`/game/${gameName}`);
   const data = await response.json();
   updateGame(data);

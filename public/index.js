@@ -6,10 +6,7 @@ const updateGame = ({ name, imageUrl, platforms }) => {
   if (cover && gameName && platformsList) {
     cover.setAttribute('style', `background-image: url("${imageUrl}")`);
     gameName.textContent = name;
-    
-    platforms = platforms.map((platform) => platform.replace(/^Nintendo/, ''));
-    
-    platformsList.textContent = platforms.join(' / ');
+    platformsList.textContent = platforms.join(' • ');
   }
 };
 
